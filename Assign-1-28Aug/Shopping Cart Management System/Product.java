@@ -1,4 +1,6 @@
 
+package shoppingCart;
+
 public class Product {
     
     int productid;
@@ -15,7 +17,7 @@ public class Product {
         productCount++;
     }
 
-    public void displayProduct(){
-        System.out.println(productid+" "+productName+" "+price);
+    public void viewProduct(){
+        System.out.println("ID:- "+productid+", Name:- "+productName+", Price:- "+price+", Quantity:- "+quantity);
     }
 }
