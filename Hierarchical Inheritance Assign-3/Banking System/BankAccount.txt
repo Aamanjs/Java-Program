@@ -1,0 +1,42 @@
+package cdac;
+
+public class BankAccount {
+	int accountnumber;
+	String holdername;
+	double balance;
+	
+	
+	public BankAccount(int accountnumber, String holdername, double balance) {
+		
+		this.accountnumber = accountnumber;
+		this.holdername = holdername;
+		this.balance = balance;
+	}
+}
+class SavingsAccount extends BankAccount{
+	
+	SavingsAccount(int accountnumber,String holdername,double balance){
+		super(accountnumber,holdername,balance);
+	}
+	
+	double addInterest(double rate) {
+		return balance+=balance*rate/100;
+	}
+	void display() {
+		System.out.println("Account No :"+accountnumber+", Holder Name :"+holdername+", Balance :"+balance);
+	}
+}
+class CurrentAccount extends BankAccount{
+	
+	CurrentAccount(int accountnumber,String holdername,double balance){
+		super(accountnumber,holdername,balance);
+	}
+	
+	double applyServiceCharge(double charge) {
+		return balance-=charge;
+	}
+	void display() {
+		System.out.println("Account No :"+accountnumber+", Holder Name :"+holdername+", Balance :"+balance);
+	}
+}
+
