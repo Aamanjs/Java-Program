@@ -1,0 +1,50 @@
+package vehicleRentalSystrem;
+
+import java.util.Scanner;
+
+public class MainVehicle {
+	
+	public static void main(String[] Args) {
+		Scanner scan = new Scanner(System.in);
+		Bike obj = new Bike();
+		Car objn = new Car();
+	  
+		VehicleBrand v = new VehicleBrand();
+		Bike[] nb = new Bike[3];
+		nb = v.createObj();	
+		
+		CarBrand c = new CarBrand();
+		Car[] nc = new Car[3];
+		nc = c.createObjn();
+		
+		System.out.println("Welcome to Vehicle Rental System !!!!");
+		while(true) {
+			System.out.println("Enter case: rb, rc, exit");
+			String input = scan.next();
+			if(input.equals("exit")) {
+				break;
+			}
+			switch(input) {
+			case "rb": System.out.println("Bike Rental Charges");
+			for(int i=0; i<nb.length;i++) {
+				System.out.print("Enter no of days ");
+				int days = scan.nextInt();
+				nb[i].calculateRentalBike(days);
+				System.out.println(" ");	
+			}
+			break;
+			case "rc": System.out.println("Car Rental Charges");
+				for(int i=0; i<nb.length;i++) {
+					System.out.print("Enter no of days ");
+					int days = scan.nextInt();
+					nc[i].calculateRentalCar(days);
+					System.out.println(" ");	
+				}
+			break;
+			default: System.out.println("Invalid Input");
+			break;
+			}
+		}
+	}
+
+}

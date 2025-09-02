@@ -1,0 +1,53 @@
+package vehicleRentalSystrem;
+
+class Vehicle {
+	
+	int carVehicleId;
+	String brand;
+	
+	Vehicle(){
+		carVehicleId = 202501;
+		brand = "BMW";
+	}
+	
+	Vehicle(int carVehicleId, String brand){
+		this.carVehicleId = carVehicleId;
+		this.brand = brand;
+	}
+}
+
+class Car extends Vehicle {
+	
+	int rent;
+	Car(){
+		
+	}
+	
+	Car(int carVehicleId, String brand, int rent){
+		super(carVehicleId, brand);
+		this.rent = rent;
+	}
+	
+	void calculateRentalCar(int days){
+		System.out.println("The total rent of "+brand+" for "+days+" days is "+rent*days+" rupees");
+	}
+}
+
+class Bike extends Vehicle {
+	
+	int rent; 
+	Bike(){
+		
+	}
+	
+	Bike(int carVehicleId, String brand, int rent){
+		super(carVehicleId, brand);
+		this.rent = rent;
+	}
+	
+	
+	void calculateRentalBike(int days){
+		System.out.println("The total rent of "+brand+" for "+days+" days is "+this.rent*days+" rupees");
+	}
+	
+}

@@ -1,0 +1,13 @@
+package vehicleRentalSystrem;
+
+public class VehicleBrand {
+	
+	Bike[] createObj() {
+		Bike[] b = new Bike[3];
+		b[0] = new Bike(7, "Kawasaki", 700);
+		b[1] = new Bike(3, "Suzuki", 900);
+		b[2] = new Bike(4, "Yamaha", 800); 
+		return b;
+	}
+
+}

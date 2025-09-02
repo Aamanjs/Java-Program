@@ -1,0 +1,13 @@
+package vehicleRentalSystrem;
+
+public class CarBrand {
+	
+	Car[] createObjn() {
+	Car[] c = new Car[3];
+	c[0] = new Car(1, "BMW", 1000);
+	c[1] = new Car(2, "AUDI", 2000);
+	c[2] = new Car(3, "SKODA", 3000);
+	return c;
+	}
+}
+
