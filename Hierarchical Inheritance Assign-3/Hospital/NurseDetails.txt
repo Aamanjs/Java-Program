@@ -1,0 +1,16 @@
+package Hospital;
+
+public class NurseDetails {
+	
+	Nurse[] createobjn() {
+		Nurse [] n= new Nurse[2] ;
+		n[0]=new Nurse(11,"Nidhi","zadu");
+		n[1]=new Nurse(12,"sa","zadu");
+		n[2]=new Nurse(13,"mi","pocha");
+		return n;
+
+				
+		}
+	
+
+}

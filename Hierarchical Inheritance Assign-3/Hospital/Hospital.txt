@@ -1,0 +1,42 @@
+package Hospital;
+
+public class HospitalMember {
+	
+	int memberid;
+	String name;
+	String department;
+	
+	HospitalMember(int memberid,String name,String department){
+		this.memberid=memberid;
+		this.name=name;
+		this.department=department;
+	}
+
+}
+class Doctor extends HospitalMember{
+	
+	static int feePerPatient = 400;
+	
+	public Doctor(int memberid, String name, String department) {
+		super(memberid, name, department);
+		this.feePerPatient = feePerPatient;
+	}
+
+	void calculateConsulationFee(int patients) {
+		
+		System.out.println("Total Consulation Fee of "+name+" is "+patients*feePerPatient);
+	}
+}
+class Nurse extends HospitalMember{
+	static int hoursPerShift = 7;
+
+	public Nurse(int memberid, String name, String department) {
+		super(memberid, name, department);
+		this.hoursPerShift=hoursPerShift;
+	
+	}
+	void calculateDutyHours(int shifts) {
+		System.out.println("Total Duty Hours Of ");
+	}
+	
+}

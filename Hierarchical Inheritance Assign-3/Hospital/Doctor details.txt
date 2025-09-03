@@ -1,0 +1,14 @@
+package Hospital;
+
+public class DoctorDetails {
+	
+	Doctor[]createobjd(){
+		Doctor[] doc = new Doctor[2];
+		
+		doc[0]=new Doctor(1,"raj","gs");
+		doc[1]=new Doctor(2,"Rushi","gs");
+		doc[2]=new Doctor(3,"Yadnesh","surgeon");
+		return doc;
+	}
+
+}
