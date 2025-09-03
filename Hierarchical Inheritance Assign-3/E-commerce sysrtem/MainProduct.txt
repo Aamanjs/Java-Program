@@ -1,0 +1,50 @@
+package EcommerceStore;
+
+import java.util.Scanner;
+
+public class MainProduct {
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		Electronics[] e = new Electronics[5];
+		Clothing[] c = new Clothing[5];
+	
+		ElectronicDetails ed = new ElectronicDetails();
+		e = ed.createObje();
+	
+		ClothingDetails cd = new ClothingDetails();
+		c = cd.createObjc();
+		
+		System.out.println("Welcome to E-Commerce Store");
+		
+		while(true) {
+			System.out.println("Enter the case: aw, ad and exit");
+			String input = sc.next();
+			if(input.equals("exit")) {
+				break;
+			}
+			switch(input) {
+			case "aw" : System.out.println("Apply Warranty");
+			for(int i=0; i<e.length;i++) {
+				System.out.println("Enter Product Name: ");
+				e[i].applyWarranty(sc.next());
+			}
+			break;
+			case "ad" : System.out.println("Apply Discount");
+			for(int i=0; i<c.length;i++) {
+				System.out.println("Enter Product Name: ");
+				c[i].applyDiscount(sc.next());
+			}
+			break;
+			default: System.out.println("Invalid input!!");
+			
+			}
+			
+			
+			
+		}
+		sc.close();
+	
+	}
+	
+}

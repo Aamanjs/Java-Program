@@ -1,0 +1,13 @@
+package EcommerceStore;
+
+public class ClothingDetails {
+	
+	Clothing[] createObjc() {
+		Clothing[] nc = new Clothing[3];
+		nc[0] = new Clothing(1, "Kurti", 700, 10);
+		nc[1] = new Clothing(2, "Saree", 900, 30);
+		nc[2] = new Clothing(3, "Dress", 800, 20);
+		return nc;
+	}
+
+}

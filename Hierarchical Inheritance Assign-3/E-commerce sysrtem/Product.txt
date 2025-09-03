@@ -1,0 +1,59 @@
+package EcommerceStore;
+
+public class Product {
+	int productID;
+	String name;
+	int price;
+	
+	Product() {
+		productID = 0;
+		name = "Bajaj";
+		price = 0;
+		// TODO Auto-generated constructor stub
+	}
+	
+	Product(int productID,String name,int price){
+		this.productID = productID;
+		this.name = name;
+		this.price = price;
+	}
+
+}
+class Electronics extends Product{
+		int years;
+	
+		Electronics() {
+			super();
+			years = 2;
+		}
+		
+		Electronics(int productID,String name,int price, int years) {
+			super(productID, name, price);
+			this.years = years;
+		}
+		
+		void applyWarranty(String name) {
+			System.out.println("The warranty applied for "+name+" is "+years+" years " );
+		}
+		// TODO Auto-generated constructor stub
+}
+	
+class Clothing extends Product{
+		double discPer;
+		
+		Clothing(){
+			super();
+			discPer = 20;
+		}
+		
+		Clothing(int productID,String name,int price, int discPer){
+			super(productID, name, price);
+			this.discPer = discPer;			
+		}
+		
+		void applyDiscount(String name) {
+			System.out.println("The discounted price of "+name+" is "+(price-(price*(discPer/100)))+" rupees ");
+		}
+}
+	
+
