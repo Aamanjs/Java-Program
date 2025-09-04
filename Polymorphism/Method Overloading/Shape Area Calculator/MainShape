@@ -24,27 +24,43 @@ public class MainShape{
     	     case "as" : System.out.println("Enter the length of side: ");
     	     int side = scan.nextInt();
     	     System.out.println("Area of Square is " + sc.area(side));
+    	     System.out.println(" ");
     	     break;
+    	     
     	     case "ar" : System.out.println("Enter the value for length and breadth: ");  
     	     int length = scan.nextInt();
     	     int breadth = scan.nextInt();
     	     System.out.println("Area of Rectangle is " + sc.area(length, breadth));
+    	     System.out.println(" ");
     	     break;
+    	     
     	     case "ac" : System.out.println("Enter the value for radius");
     	     double radius = scan.nextDouble();
     	     System.out.println("Area of Circle is " + sc.area(radius));
+    	     System.out.println(" ");
+    	     break;
     	     
+    	     case "at" : System.out.println("It is a triangle or not");
+    	     boolean in = scan.nextBoolean();
+    	     if(in = true) {
+    	    	 System.out.println("Enter the value of base and height");
+        	     double base = scan.nextDouble();
+        	     double height = scan.nextDouble();
+        	     System.out.println("Area of Triangle is "+ sc.area(base, height, in));
+    	     } else System.out.println("Area of Triangle cannot be obtained as it is not a Triangle");
+    	     System.out.println(" ");
+    	     break;
+    	     
+    	     default: System.out.println("Invalid Input!!");
     	     
     	    }
     	}
 
        
-//        // Triangle area
-//        System.out.println("Area of Triangle (base=4, height=5): " + sc.area(4.0, 5.0, true));
-//
-//        // Trying with isTriangle = false
-//        System.out.println("Invalid Triangle check: " + sc.area(4.0, 5.0, false));
+
   }
 
 }
+
+
 
