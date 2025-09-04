@@ -19,7 +19,6 @@ class Doctor extends HospitalMember{
 	
 	public Doctor(int memberid, String name, String department) {
 		super(memberid, name, department);
-		this.feePerPatient = feePerPatient;
 	}
 
 	void calculateConsulationFee(int patients) {
@@ -32,11 +31,10 @@ class Nurse extends HospitalMember{
 
 	public Nurse(int memberid, String name, String department) {
 		super(memberid, name, department);
-		this.hoursPerShift=hoursPerShift;
 	
 	}
 	void calculateDutyHours(int shifts) {
-		System.out.println("Total Duty Hours Of ");
+		System.out.println("Total Duty Hours Of "+name+" are "+hoursPerShift*shifts+" hours ");
 	}
 	
 }
