@@ -3,13 +3,11 @@ package Hospital;
 public class NurseDetails {
 	
 	Nurse[] createobjn() {
-		Nurse [] n= new Nurse[2] ;
-		n[0]=new Nurse(11,"Nidhi","zadu");
-		n[1]=new Nurse(12,"sa","zadu");
-		n[2]=new Nurse(13,"mi","pocha");
-		return n;
-
-				
+		Nurse[] n = new Nurse[3] ;
+		n[0]=new Nurse(11,"Nidhi","ICU");
+		n[1]=new Nurse(12,"sa","Normal Ward");
+		n[2]=new Nurse(13,"mi","ICCU");
+		return n;		
 		}
 	
 
