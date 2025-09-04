@@ -1,0 +1,83 @@
+package mobileContactManager;
+import java.util.Scanner;
+
+public class MainMobile {
+	
+
+	public static void main(String[] args){
+     	
+	 Scanner scan = new Scanner(System.in);
+	 
+	 Mobile m = new Mobile();
+	 
+	 String[] b = new String[2];
+	 String[] n = new String[2];
+	 int index = 0;
+	 
+	 String name;
+	 String phonenumber;
+	 String email;
+	 String address;
+	 
+	 
+	 System.out.println("Welcome to Mobile Contact Manager");
+	 
+	 while(true) {
+		 System.out.println("Enter case: cwnp, cwnpe, cwnpea, bcd and exit");
+		 String input = scan.next();
+		 if(input.equals("exit")) {
+			 break;
+		 }
+		 switch(input) 
+		 {
+		 case "cwnp":System.out.println("Enter Name and Phone No: ");
+		 name = scan.next();
+		 phonenumber = scan.next();
+		 m.addContact(name, phonenumber);
+		 System.out.println(" ");
+		 break;
+		 
+		 case "cwnpe":System.out.println("Enter Name, phone No and Email: ");
+		 name = scan.next();
+		 phonenumber = scan.next();
+		 email = scan.next();
+		 m.addContact(name, phonenumber, email);
+		 System.out.println(" ");
+		 break;
+		 
+		 case "cwnpea":System.out.println("Enter Name, phone No, Email, and Address : ");
+		 name = scan.next();
+		 phonenumber = scan.next();
+		 email = scan.next();
+		 address = scan.next();
+		 name = scan.next();
+		 phonenumber = scan.next();
+		 m.addContact(name, phonenumber, email,address);
+		 System.out.println(" ");
+		 break;
+		 
+		 case "bcd":System.out.println("Enter multiple contact details");
+
+		 for(int i=0; i<b.length; i++) {
+			 b[i]=scan.next();
+		 }
+		 System.out.println("======================");
+		 for(int i=0; i<n.length; i++) {
+			 n[i]=scan.next();
+		 }
+
+		 for(int i=0; i<b.length; i++) {
+			System.out.println(m.addContact(b[i], n[i]));
+		 }
+
+		 System.out.println(" ");
+		 break;
+			 
+		 default: System.out.println("Invalid input!!");
+		 }
+		
+	 }
+	 
+
+	}
+}

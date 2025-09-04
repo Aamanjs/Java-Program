@@ -1,0 +1,22 @@
+package mobileContactManager;
+
+public class Mobile {
+	
+	String addContact(String name,String phonenumber) {
+		return "Contact Saved: Name ="+name+", Phone Number ="+phonenumber;
+	}
+	
+	String addContact(String name,String phonenumber,String email) {
+		return "Contact Saved: Name ="+name+", Phone Number ="+phonenumber+" Email ="+email;
+	}
+	
+	String addContact(String name,String phonenumber,String email,String address) {
+		return "Contact Saved: Name ="+name+", Phone Number ="+phonenumber+" Email ="+email+" Address ="+address;
+	}
+	
+	String addContact(String[]names,String[]numbers) {
+		return "Contact Saved: Name ="+names+", Phone Number ="+numbers;
+	}
+	
+
+}
