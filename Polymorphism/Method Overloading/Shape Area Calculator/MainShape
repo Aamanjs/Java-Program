@@ -1,0 +1,50 @@
+package shapeCalculator;
+
+import java.util.Scanner;
+
+public class MainShape{
+    
+    public static void main(String[] args){
+    	
+    	Scanner scan = new Scanner(System.in);
+
+    ShapeCalculator sc = new ShapeCalculator();
+    
+    System.out.println("Welcome to Shape Calculator");
+    
+    while(true) 
+    {
+    		System.out.println("Enter the case: as, ar, ac, at and exit");
+    		String input = scan.next();
+    		if(input.equals("exit")) {
+    		break;
+    		}
+    		switch(input) 
+    		{
+    	     case "as" : System.out.println("Enter the length of side: ");
+    	     int side = scan.nextInt();
+    	     System.out.println("Area of Square is " + sc.area(side));
+    	     break;
+    	     case "ar" : System.out.println("Enter the value for length and breadth: ");  
+    	     int length = scan.nextInt();
+    	     int breadth = scan.nextInt();
+    	     System.out.println("Area of Rectangle is " + sc.area(length, breadth));
+    	     break;
+    	     case "ac" : System.out.println("Enter the value for radius");
+    	     double radius = scan.nextDouble();
+    	     System.out.println("Area of Circle is " + sc.area(radius));
+    	     
+    	     
+    	    }
+    	}
+
+       
+//        // Triangle area
+//        System.out.println("Area of Triangle (base=4, height=5): " + sc.area(4.0, 5.0, true));
+//
+//        // Trying with isTriangle = false
+//        System.out.println("Invalid Triangle check: " + sc.area(4.0, 5.0, false));
+  }
+
+}
+
