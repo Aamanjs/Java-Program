@@ -1,0 +1,52 @@
+package Hospital;
+
+import java.util.Scanner;
+
+public class MainHospital {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		Doctor[] d = new Doctor[5];
+		Nurse[] n = new Nurse[5];
+		
+		DoctorDetails dd = new DoctorDetails();
+		d = dd.createobjd();
+		
+		NurseDetails nd = new NurseDetails();
+		n = nd.createobjn();
+		
+		System.out.println("Welcome to Hospital Management System");
+		
+		while(true) {
+			System.out.println("Enter case: cf, dh and exit");
+			String input = sc.next();
+			if(input.equals("exit")) {
+				System.out.println("Exited from Hospital Management System ");
+				break;
+			}
+			switch(input) {
+			case "cf": System.out.println("Doctor's Consultation Fee");
+					for(int i=0; i<d.length; i++) {
+						System.out.println("Enter no of patients for Doctor "+ d[i].name);
+						int patients = sc.nextInt();
+						d[i].calculateConsulationFee(patients);
+						System.out.println(" ");
+					}
+			break;		
+			case "dh": System.out.println("Nurse's total duty hours");
+			for(int i=0; i<n.length; i++) {
+				System.out.println("Enter no of shifts completed by Nurse "+ n[i].name);
+				int shifts = sc.nextInt();
+				n[i].calculateDutyHours(shifts);
+				System.out.println(" ");
+			}
+			break;
+			default: System.out.println("Ïnvalid Input!! ");
+			}
+		}
+		
+		
+	}
+
+}
