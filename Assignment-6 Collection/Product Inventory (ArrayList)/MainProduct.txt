@@ -1,0 +1,39 @@
+package productInventorySystem;
+
+import java.util.ArrayList;
+
+public class MainProduct {
+
+	public static void main(String[] args) {
+		
+		ProductManagement pm = new ProductManagement(); 
+		
+		ArrayList<Product> al = pm.createProduct();
+		
+		System.out.println("Displaying Created Products: ");
+		pm.displayProd(al);
+		
+		System.out.println(" ");
+		System.out.println("-------------------------------------------------");
+		
+		System.out.println("Updated Products");
+		pm.updateProd(al);
+		pm.displayProd(al);
+		
+		System.out.println(" ");
+		System.out.println("-------------------------------------------------");
+		
+		System.out.println("Deletion of Products");
+		pm.deleteProd(al);
+		
+		System.out.println("Updated Products after deletion");
+		pm.displayProd(al);
+		
+		System.out.println(" ");
+		System.out.println("-------------------------------------------------");
+		
+		System.out.println("Total inventory value of product");
+		pm.totalInventoryVal(al);
+		
+	}
+}

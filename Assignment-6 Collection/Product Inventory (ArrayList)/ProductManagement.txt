@@ -1,0 +1,74 @@
+package productInventorySystem;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManagement {
+	
+	Scanner sc =new Scanner(System.in);
+	
+	public ArrayList<Product> createProduct()
+	{
+		ArrayList<Product> al = new ArrayList<>();
+		
+		Product p1 = new Product(101, "Titan", 1200, 1);
+		Product p2 = new Product(102, "Sonata", 1600, 2);
+		Product p3 = new Product(103, "Fastrack", 1000, 3);
+		
+		al.add(p1);
+		al.add(p2);
+		al.add(p3);
+		
+		return al;
+	}
+	
+	public void displayProd(ArrayList<Product> al) {
+		for(Product obj: al)
+		{
+			obj.displayProduct();
+		}
+	}
+	
+	public void updateProd(ArrayList<Product> al) {
+		
+		System.out.println("Enter Product Id to update: ");
+		int pid = sc.nextInt();
+		for(Product obj: al) 
+		{
+			if(obj.id == pid)
+			{
+				obj.price += 300;
+				obj.quantity += 1;
+			}
+		}
+		
+		
+	}
+	
+	public void deleteProd(ArrayList<Product> al) {
+		System.out.println("Enter Product Id to delete: ");
+		int pid = sc.nextInt();
+		int pos = 0;
+		for(Product obj: al) 
+		{
+			if(obj.id == pid) 
+			{
+				pos = al.indexOf(obj);
+			}
+		}
+		al.remove(pos);
+		System.out.println("ProductID "+ pid + " is removed");
+	}
+	
+	public void totalInventoryVal(ArrayList<Product> al) {
+	double sum =0;
+	{
+		for(Product obj: al)
+		{
+			sum += obj.price*obj.quantity;
+		}
+	}
+	System.out.println("Total :"+sum);
+
+}
+}
