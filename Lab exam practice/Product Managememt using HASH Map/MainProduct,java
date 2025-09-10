@@ -1,0 +1,81 @@
+
+import java.util.Scanner;
+
+public class MainProduct {
+	
+	public static void main(String[] Args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		ProductManagement pm = new ProductManagement();
+		
+		while(true) {
+			
+			System.out.println("----------- Product Management System ------------ ");
+			System.out.println("1. Add Product");
+			System.out.println("2. View All Products");
+			System.out.println("3. Update Product");
+			System.out.println("4. Delete Product");
+			System.out.println("5. Calculate Total Inventory Value");
+			System.out.println("6. Sort Products by price");
+			System.out.println("7. Exit");
+			System.out.println(" ");
+			System.out.println("Enter Your Choice");
+			
+			int choice = sc.nextInt();
+			sc.nextLine();
+			
+			if(choice == 7) {
+				System.out.println("Exited from the system");
+				break;
+			}
+			
+			switch(choice) {
+			case 1:
+				System.out.print("Enter Product ID: ");
+				int id = sc.nextInt();
+				sc.nextLine();
+				System.out.print("Enter Product Name: ");
+				String name = sc.nextLine();
+				System.out.print("Enter Price: ");
+				double price = sc.nextDouble();
+				System.out.println("Enter Quantity: ");
+				int qty = sc.nextInt();
+				sc.nextLine();
+				
+				Product p = new Product(id, name, price, qty);
+				pm.addProduct(p);
+				System.out.println(" ");
+				break;
+				
+			case 2:
+				pm.viewAllProducts();
+				System.out.println(" ");
+				break;
+				
+			case 3:
+				System.out.println("Enter product ID to update");
+				int uid = sc.nextInt();
+				pm.updateProduct(uid);
+				break;
+				
+			case 4:
+				System.out.println("Enter product ID to delete");
+				int did = sc.nextInt();
+				pm.deleteProduct(did);
+				break;
+				
+			case 5:
+				pm.calculateTotalInventoryValue();
+				break;				
+				
+				
+			}
+			
+			
+		}
+		
+		
+	}
+
+}
