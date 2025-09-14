@@ -1,0 +1,132 @@
+
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StudentManagementSystem {
+
+	Scanner sc = new Scanner(System.in);
+
+	static ArrayList<Student> slist = new ArrayList<>();
+
+	// to add student details
+	public void addStudent(Student s) throws IOException {
+
+		FileOutputStream fo1 = new FileOutputStream("Stud.txt");
+		ObjectOutputStream oo1 = new ObjectOutputStream(fo1);
+
+		slist.add(s);
+		for (Student s1 : slist) {
+			oo1.writeObject(s1);
+		}
+
+		System.out.println("Student " + s.id + " added sucessfully");
+
+	}
+
+	// to view student details
+	public void viewStudent() throws IOException, ClassNotFoundException {
+
+		FileInputStream fi = new FileInputStream("Stud.txt");
+		ObjectInputStream oi = new ObjectInputStream(fi);
+
+		Student sv;
+		try {
+			while ((sv = (Student) oi.readObject()) != null) {
+				System.out.println(sv.toString());
+			}
+		} catch (EOFException e) {
+			// TODO: handle exception
+		}
+
+	}
+
+	// to update details
+	public void updateStudent() throws IOException, ClassNotFoundException {
+
+		int index = 0;
+
+		FileInputStream fi1 = new FileInputStream("Stud.txt");
+		ObjectInputStream oi1 = new ObjectInputStream(fi1);
+
+		System.out.println("Enter Student Id");
+		int uid = sc.nextInt();
+
+		Student su;
+		try {
+			while ((su = (Student) oi1.readObject()) != null) {
+				if (su.id == uid) {
+					System.out.println("Enter Student Course");
+					String c = sc.next();
+					System.out.println("Enter Student Marks");
+					int m = sc.nextInt();
+
+					su.setCourse(c);
+					su.setMarks(m);
+
+					System.out.println("Student details of Student Id " + uid + " are updated");
+				} else {
+					System.out.println("Invalid Student ID");
+				}
+				slist.set(index, (Student)su);
+				index++;
+			}
+		} catch (EOFException e) {
+			// TODO: handle exception
+		}
+
+		FileOutputStream fo1 = new FileOutputStream("Stud.txt");
+		ObjectOutputStream oo1 = new ObjectOutputStream(fo1);
+		
+		for(Student s : slist) {
+			oo1.writeObject(s);
+		}
+
+
+	}
+
+	//to delete details
+	public void deleteStudent() throws IOException, ClassNotFoundException {
+		
+		int index = 0;
+		
+		FileInputStream fi2 = new FileInputStream("Stud.txt");
+		ObjectInputStream oi2 = new ObjectInputStream(fi2);
+		
+		System.out.println("Enter Student Id");
+		int did = sc.nextInt();
+
+		Student sd;
+		try {
+			while((sd = (Student) oi2.readObject())!= null) {
+				boolean bool = true;
+				if(sd.id == did) {
+					slist.remove(index);
+					bool = false;
+					System.out.println("Student Id " +did+ " has been removed from the list");
+					break;
+				} 
+				if(bool==false) {
+					System.out.println("Invalid Student ID");
+				}
+				index++;
+			}
+		} catch (EOFException e) {
+			// TODO: handle exception
+		}
+		
+		FileOutputStream fo1 = new FileOutputStream("Stud.txt");
+		ObjectOutputStream oo1 = new ObjectOutputStream(fo1);
+
+		for( Student s : slist) {
+			oo1.writeObject(s);
+		}	
+	}
+	
+
+}
